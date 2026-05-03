@@ -821,10 +821,13 @@ footer p {
 
 /* Responsive */
 @media (max-width: 992px) {
+    .section { padding: 4rem 0; }
+    
     .hero {
         flex-direction: column-reverse;
         text-align: center;
         padding-top: 8rem;
+        gap: 2rem;
     }
     
     .hero-text {
@@ -837,20 +840,60 @@ footer p {
     
     .about-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* simple mobile menu for now */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 5, 5, 0.98);
+        flex-direction: column;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-color);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.3s ease-in-out;
     }
-    
+
+    .nav-links.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+        box-shadow: none;
+        border: none;
+        min-width: 100%;
+        background: transparent;
+        text-align: center;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
     .hamburger {
         display: block;
     }
     
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
     }
     
     .timeline::before {
@@ -866,7 +909,60 @@ footer p {
     }
     
     .profile-image {
-        width: 280px;
-        height: 380px;
+        width: 260px;
+        height: 340px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .certs-container {
+        padding: 1.5rem;
+    }
+    
+    .offerings-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+    
+    .timeline-cta {
+        flex-direction: column;
+    }
+    
+    .offering-card {
+        padding: 1.5rem;
+    }
+    
+    .offering-hover {
+        padding: 1.5rem;
     }
 }
