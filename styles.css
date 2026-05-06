@@ -217,12 +217,16 @@ ul {
 }
 
 /* Announcement Banner */
-.announcement-banner {
-    position: absolute;
-    top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
+.banner-wrapper {
+    width: 100%;
+    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+    position: relative;
     z-index: 100;
+}
+
+.announcement-banner {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 107, 0, 0.3);
     padding: 0.6rem 1.5rem;
@@ -246,7 +250,7 @@ ul {
 .announcement-banner:hover {
     background: rgba(255, 107, 0, 0.1);
     border-color: var(--accent-primary);
-    transform: translateX(-50%) translateY(-2px);
+    transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(255, 107, 0, 0.15);
 }
 
@@ -271,12 +275,12 @@ ul {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    min-height: calc(100vh - 120px);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 2rem;
-    padding-top: 5rem;
+    padding-top: 2rem;
     max-width: 1200px;
     margin: 0 auto;
     gap: 4rem;
@@ -892,7 +896,7 @@ footer p {
     .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding-top: 8rem;
+        padding-top: 4rem;
         gap: 2rem;
     }
 
@@ -950,8 +954,11 @@ footer p {
         display: block;
     }
 
+    .banner-wrapper {
+        padding-top: 100px;
+    }
+
     .announcement-banner {
-        top: 100px;
         white-space: normal;
         text-align: center;
     }
