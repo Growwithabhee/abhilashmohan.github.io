@@ -1051,3 +1051,136 @@ footer p {
         padding: 1.5rem;
     }
 }
+
+/* ==========================================
+   Interactive Persona Switcher Styles 
+   ========================================== */
+.persona-switcher-section {
+    padding: 2.5rem 0 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 70px; /* Sticky right below navbar */
+    z-index: 950;
+    background: linear-gradient(180deg, var(--bg-main) 0%, rgba(5, 5, 5, 0.95) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.persona-switcher {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    padding: 0.35rem;
+    border-radius: 100px;
+    display: flex;
+    gap: 0.25rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    max-width: 95%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: relative;
+}
+
+.persona-switcher::-webkit-scrollbar {
+    display: none;
+}
+
+.persona-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-secondary);
+    padding: 0.65rem 1.4rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+}
+
+.persona-btn i {
+    font-size: 0.85rem;
+    color: var(--accent-primary);
+    transition: transform 0.3s ease;
+}
+
+.persona-btn:hover {
+    color: var(--text-primary);
+}
+
+.persona-btn:hover i {
+    transform: scale(1.15);
+}
+
+.persona-btn.active {
+    color: #fff;
+    background: var(--accent-primary);
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.35);
+}
+
+/* Animations and transitions for active elements */
+.persona-filterable {
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.persona-filterable.persona-fade-out {
+    opacity: 0;
+    transform: scale(0.96) translateY(12px);
+}
+
+.persona-filterable.persona-hidden {
+    display: none !important;
+}
+
+/* Active Indicator / Segment Category headings styling */
+.offerings-category.persona-hidden,
+.edu-grid .persona-hidden,
+.timeline-item.persona-hidden {
+    display: none !important;
+}
+
+/* Make timeline responsive when items are toggled */
+.timeline-item {
+    animation: timelineFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes timelineFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .persona-switcher-section {
+        top: 60px;
+        padding: 1.5rem 0 1rem 0;
+    }
+    .persona-switcher {
+        width: 100%;
+        border-radius: 20px;
+        padding: 0.3rem;
+        gap: 0.15rem;
+    }
+    .persona-btn {
+        padding: 0.55rem 0.9rem;
+        font-size: 0.8rem;
+    }
+}
