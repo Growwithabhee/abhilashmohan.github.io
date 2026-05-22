@@ -108,28 +108,46 @@ function initializeApp() {
 
             // Intercept dropdown portfolio navigation clicks to sync with switcher personas
             const linkText = this.textContent.trim().toLowerCase();
+            let delayScroll = false;
+
             if (targetId === '#experience' && linkText.includes('corporate')) {
                 filterPersona('corporate');
             } else if ((targetId === '#projects' || targetId === '#experience') && linkText.includes('entrepreneurial')) {
                 filterPersona('kitchen');
             } else if (targetId === '#offerings') {
                 filterPersona('all');
+            } else if (targetId === '#education') {
+                const activeBtn = document.querySelector('.persona-btn.active');
+                const activePersona = activeBtn ? activeBtn.getAttribute('data-persona') : 'all';
+                // Switch to corporate if it's currently hidden in coaching or kitchen
+                if (activePersona === 'coaching' || activePersona === 'kitchen') {
+                    filterPersona('corporate');
+                    delayScroll = true;
+                }
             }
 
             // Map virtual `#projects` links to the unified `#experience` timeline
             const scrollTargetId = targetId === '#projects' ? '#experience' : targetId;
-            const targetElement = document.querySelector(scrollTargetId);
             
-            if (targetElement) {
-                // Adjust for sticky header and persona switcher
-                const headerOffset = 140; // Combined heights of navbar + persona switcher
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            const performScroll = () => {
+                const targetElement = document.querySelector(scrollTargetId);
+                if (targetElement) {
+                    // Adjust for sticky header and persona switcher
+                    const headerOffset = 140; // Combined heights of navbar + persona switcher
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            };
+
+            if (delayScroll) {
+                setTimeout(performScroll, 350); // Wait for transition display none removal
+            } else {
+                performScroll();
             }
         });
     });
