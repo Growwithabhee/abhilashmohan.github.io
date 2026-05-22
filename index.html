@@ -91,44 +91,137 @@
         </div>
     </header>
 
+    <!-- Dynamic Persona Switcher Section -->
+    <section class="persona-switcher-section">
+        <div class="persona-switcher">
+            <button class="persona-btn active" data-persona="all">
+                <i class="fas fa-th-large"></i> All Tracks
+            </button>
+            <button class="persona-btn" data-persona="corporate">
+                <i class="fas fa-briefcase"></i> Corporate WFM
+            </button>
+            <button class="persona-btn" data-persona="coaching">
+                <i class="fas fa-chart-line"></i> Career Coaching
+            </button>
+            <button class="persona-btn" data-persona="kitchen">
+                <i class="fas fa-utensils"></i> Cloud Kitchen
+            </button>
+        </div>
+    </section>
+
     <section id="about" class="section">
         <div class="container section-header fade-in">
             <h2 class="section-title">Professional <span class="highlight">Summary</span></h2>
             <div class="title-underline"></div>
         </div>
         <div class="container about-grid fade-in-up">
-            <div class="about-text">
-                <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.5rem;">I
-                    don't inherit working systems. I build them.</p>
-                <p>I operate at the intersection of enterprise workforce strategy, executive coaching, and zero-to-one
-                    entrepreneurship:</p>
-                <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-                    <li><strong style="color: var(--text-primary);">In Corporate GCCs:</strong> I drive capacity
-                        planning, 9-box calibrations, and transition engineers from bench to billable.</li>
-                    <li><strong style="color: var(--text-primary);">For Professionals:</strong> I coach the exact
-                        conversations most organizations get wrong—appraisals, reviews, and career transitions.</li>
-                    <li><strong style="color: var(--text-primary);">For Founders:</strong> I leverage my experience
-                        bootstrapping a cloud kitchen to consult on zero-to-one operational strategy.</li>
-                </ul>
-                <p>Whether you are scaling a global engineering workforce or launching an independent business, I build
-                    the systems that drive outcomes.</p>
+            <!-- Dynamic Professional Summaries Container -->
+            <div class="about-text-container">
+                <!-- All Tracks Summary -->
+                <div class="about-text-wrapper persona-filterable" data-persona="all">
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.5rem;">I don't inherit working systems. I build them.</p>
+                    <p>I operate at the intersection of enterprise workforce strategy, executive coaching, and zero-to-one entrepreneurship:</p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+                        <li><strong style="color: var(--text-primary);">In Corporate GCCs:</strong> I drive capacity planning, 9-box calibrations, and transition engineers from bench to billable.</li>
+                        <li><strong style="color: var(--text-primary);">For Professionals:</strong> I coach the exact conversations most organizations get wrong—appraisals, reviews, and career transitions.</li>
+                        <li><strong style="color: var(--text-primary);">For Founders:</strong> I leverage my experience bootstrapping a cloud kitchen to consult on zero-to-one operational strategy.</li>
+                    </ul>
+                    <p>Whether you are scaling a global engineering workforce or launching an independent business, I build the systems that drive outcomes.</p>
+                </div>
+                <!-- Corporate Summary -->
+                <div class="about-text-wrapper persona-filterable persona-hidden persona-fade-out" data-persona="corporate">
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.5rem;">Scaling workforce intelligence and high-performance GCC operations.</p>
+                    <p>I design and run workforce management systems that scale. Having managed cost bases for global engineering teams at <strong>IBM</strong> and <strong>World Wide Technology</strong>, I specialize in demand-capacity forecasting, transition models (converting bench to billable), and evidence-based talent review systems that align people operations with bottom-line revenue.</p>
+                </div>
+                <!-- Coaching Summary -->
+                <div class="about-text-wrapper persona-filterable persona-hidden persona-fade-out" data-persona="coaching">
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.5rem;">Helping ambitious professionals shape their value and own their narratives.</p>
+                    <p>I coach the exact high-stakes career conversations most organizations fail to guide you on. Drawing from a decade of calibration experience in global enterprises, I equip professionals with the tactical frameworks, evidence-based metrics, and appraisal scripts needed to navigate reviews, successfully transition paths, and secure promotions.</p>
+                </div>
+                <!-- Cloud Kitchen Summary -->
+                <div class="about-text-wrapper persona-filterable persona-hidden persona-fade-out" data-persona="kitchen">
+                    <p style="font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1.5rem;">Translating operational blueprints into highly profitable zero-to-one kitchens.</p>
+                    <p>I build operational blueprints for food-tech ventures. Having co-founded and run <strong>Bengaluru Breads & Chops</strong> to 1,500+ orders and a 4.2 Zomato rating, I translate first-principles kitchen logistics, vendor pipelines, and delivery-platform algorithms into highly profitable, risk-minimized setups.</p>
+                </div>
             </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3 class="stat-number">10+</h3>
-                    <p class="stat-label">Years Experience</p>
+
+            <!-- Dynamic Stats Grids Container -->
+            <div class="stats-grid-container">
+                <!-- All Tracks Stats -->
+                <div class="stats-grid persona-filterable" data-persona="all">
+                    <div class="stat-card">
+                        <h3 class="stat-number">10+</h3>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">APAC/EU</h3>
+                        <p class="stat-label">Global Exposure</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">GenAI</h3>
+                        <p class="stat-label">Product Focus</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">Dual MBA</h3>
+                        <p class="stat-label">Intl Biz & Marketing</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3 class="stat-number">APAC/EU</h3>
-                    <p class="stat-label">Global Exposure</p>
+                <!-- Corporate Stats -->
+                <div class="stats-grid persona-filterable persona-hidden persona-fade-out" data-persona="corporate">
+                    <div class="stat-card">
+                        <h3 class="stat-number">10+</h3>
+                        <p class="stat-label">Years WFM Experience</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">600+</h3>
+                        <p class="stat-label">Engineers Lifecycle Led</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">8-Fig</h3>
+                        <p class="stat-label">USD Win Supported</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">IBM/WWT</h3>
+                        <p class="stat-label">Corporate Proven</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3 class="stat-number">GenAI</h3>
-                    <p class="stat-label">Product Focus</p>
+                <!-- Coaching Stats -->
+                <div class="stats-grid persona-filterable persona-hidden persona-fade-out" data-persona="coaching">
+                    <div class="stat-card">
+                        <h3 class="stat-number">100+</h3>
+                        <p class="stat-label">Careers Shaped</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">1.5k+</h3>
+                        <p class="stat-label">Engaged Learners</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">Appraisal</h3>
+                        <p class="stat-label">Calibration Prep</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">1:1 / Async</h3>
+                        <p class="stat-label">Direct Access</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3 class="stat-number">Dual MBA</h3>
-                    <p class="stat-label">Intl Biz & Marketing</p>
+                <!-- Kitchen Stats -->
+                <div class="stats-grid persona-filterable persona-hidden persona-fade-out" data-persona="kitchen">
+                    <div class="stat-card">
+                        <h3 class="stat-number">1,500+</h3>
+                        <p class="stat-label">Orders Fulfilled</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">4.2</h3>
+                        <p class="stat-label">Zomato Rating</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">Zero-to-One</h3>
+                        <p class="stat-label">Kitchen Blueprint</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="stat-number">₹99</h3>
+                        <p class="stat-label">No-BS Playbook</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,146 +233,33 @@
             <div class="title-underline"></div>
         </div>
         <div class="container competencies-grid fade-in-up">
-            <div class="skill-tag">Talent Development & Performance Management</div>
-            <div class="skill-tag">Talent Management</div>
-            <div class="skill-tag">Workforce Planning & Forecast Management</div>
-            <div class="skill-tag">Coaching & Mentoring</div>
-            <div class="skill-tag">Capacity Management</div>
-            <div class="skill-tag">Global Talent Acquisition</div>
-            <div class="skill-tag">Competency Management</div>
-            <div class="skill-tag">Operations Management</div>
-            <div class="skill-tag">Career Path Planning</div>
-            <div class="skill-tag">Succession Planning</div>
-            <div class="skill-tag">Talent Review</div>
-            <div class="skill-tag">Financial Modeling</div>
-            <div class="skill-tag">High Performance Cultures</div>
-            <div class="skill-tag">Content Creation & Storytelling</div>
-            <div class="skill-tag">Executive Communication</div>
-            <div class="skill-tag">Critical Thinking</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate">Talent Development & Performance Management</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate">Talent Management</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate">Workforce Planning & Forecast Management</div>
+            <div class="skill-tag persona-filterable" data-persona="coaching">Coaching & Mentoring</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate">Capacity Management</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate">Global Talent Acquisition</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate">Competency Management</div>
+            <div class="skill-tag persona-filterable" data-persona="kitchen">Operations Management</div>
+            <div class="skill-tag persona-filterable" data-persona="coaching">Career Path Planning</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate">Succession Planning</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate">Talent Review</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate kitchen">Financial Modeling</div>
+            <div class="skill-tag persona-filterable" data-persona="coaching">High Performance Cultures</div>
+            <div class="skill-tag persona-filterable" data-persona="coaching">Content Creation & Storytelling</div>
+            <div class="skill-tag persona-filterable" data-persona="coaching">Executive Communication</div>
+            <div class="skill-tag persona-filterable" data-persona="corporate coaching kitchen">Critical Thinking</div>
         </div>
     </section>
 
     <section id="experience" class="section">
         <div class="container section-header fade-in">
-            <h2 class="section-title">Professional <span class="highlight">Experience</span></h2>
+            <h2 class="section-title">My Professional <span class="highlight">Journey</span></h2>
             <div class="title-underline"></div>
         </div>
         <div class="container timeline fade-in-up">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Jul 2024 - Mar 2026</span>
-                    <h3 class="timeline-role">Resource Manager (Engineering Delivery)</h3>
-                    <h4 class="timeline-company">World Wide Technology | India & Remote</h4>
-                    <p>Served as Engineering People Leader for 27 engineers across 40+ engagements, managing a
-                        multi-million-dollar workforce cost base. Designed the 'Penpic Framework' and 'Brag Book' to
-                        shift the performance culture to an evidence-based model. Created the India Leadership Weekly
-                        Status Report for real-time governance, and successfully converted 12 bench weeks into presales
-                        support, directly contributing to an 8-figure USD engagement win.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Nov 2023 - Mar 2024</span>
-                    <h3 class="timeline-role">Associate Head – People & Culture</h3>
-                    <h4 class="timeline-company">STIR Education | Bengaluru</h4>
-                    <p>Supported People & Culture leadership during organizational transition — focusing on leadership
-                        enablement, operating clarity, and people systems that worked without heavy process overhead.
-                    </p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Aug 2023 - Jun 2025</span>
-                    <h3 class="timeline-role">Workforce Management Consultant</h3>
-                    <h4 class="timeline-company">Independent Consultant | Bengaluru</h4>
-                    <p>Advised startups and growing teams on resource planning, workforce structure, and operational
-                        efficiency — translating delivery bottlenecks into simple, actionable systems.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Aug 2022 - Jul 2023</span>
-                    <h3 class="timeline-role">Operations Manager (Resource Management)</h3>
-                    <h4 class="timeline-company">Teqfocus | Remote</h4>
-                    <p>Built the entire Workforce Operations function from Zero to One for a distributed organization
-                        across Canada and India. Designed an interactive Employee Evaluation Dashboard using Tableau,
-                        implemented a Staffing Partner Management Programme to reduce recruitment costs by 15%, and led
-                        HR process design including a referral policy that increased role fulfillment speed by 25%.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Jul 2017 - Jul 2022</span>
-                    <h3 class="timeline-role">Workforce Staffing Manager</h3>
-                    <h4 class="timeline-company">IBM | Bengaluru & Remote</h4>
-                    <p>Progressed through multiple WFM roles over 5 years. Managed a 600+ workforce lifecycle across UK,
-                        Germany, and Switzerland, maintaining utilization above 85%. Led contractor fulfillment for 70+
-                        accounts (onboarding 650+ contractors) and managed the deployment of 5,500+ campus hires with a
-                        bench hit rate below 3%. Recognized with multiple awards including the Service Excellence Award
-                        2021 and BluePoints for client success.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Jan 2016 - Feb 2016</span>
-                    <h3 class="timeline-role">Marketing Trainee</h3>
-                    <h4 class="timeline-company">Sasken Communication Technologies | Bengaluru</h4>
-                    <p>B2B sales lead generation for Europe, USA, and UK. Consistently achieved daily targets and gained
-                        expertise in global telematics solutions and semiconductor markets.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Aug 2015 - Nov 2015</span>
-                    <h3 class="timeline-role">Food Tech Industry Research — The Venturator Live Project</h3>
-                    <h4 class="timeline-company">Christ University | Bengaluru</h4>
-                    <p>Selected through a competitive process to research the Indian food tech ecosystem for The
-                        Venturator — an entrepreneurship enablement platform. Produced a structured industry report
-                        covering market overview, player landscape, investment behaviour, distribution models, and a
-                        forward-looking analysis of the sector.</p>
-                    <p class="mt-4" style="color: var(--text-secondary); font-size: 0.95rem;">Mapped early-stage players
-                        including Swiggy (pre-scale), Zomato's entry into delivery, hyperlocal logistics ventures, and
-                        emerging models like train delivery. Work included SWOT analysis, investor profiling, and a
-                        database of food tech organisations across India.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Apr 2014 - Mar 2015</span>
-                    <h3 class="timeline-role">Talent Acquisition Executive</h3>
-                    <h4 class="timeline-company">Atria Convergence Technologies Pvt Ltd | Bengaluru</h4>
-                    <p>Recruited top-tier candidates to meet telecom industry goals. Negotiated compensation,
-                        established recruitment partner relationships, and provided data-driven staffing metrics.</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">Feb 2014 - Apr 2014</span>
-                    <h3 class="timeline-role">HR Trainee</h3>
-                    <h4 class="timeline-company">Samvith Technologies | Bengaluru</h4>
-                    <p>Provided end-to-end talent acquisition support. Headhunted 100+ niche skills, maintained
-                        placement reporting, and negotiated offers for seamless candidate closure.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section bg-darker">
-        <div class="container section-header fade-in">
-            <h2 class="section-title">Entrepreneurial <span class="highlight">Ventures</span></h2>
-            <div class="title-underline"></div>
-        </div>
-        <div class="container timeline fade-in-up">
-            <div class="timeline-item">
+            <!-- 1. Grow with abhi (coaching) -->
+            <div class="timeline-item persona-filterable" data-persona="coaching">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <span class="timeline-date">Apr 2026 - Present</span>
@@ -304,7 +284,36 @@
                     </div>
                 </div>
             </div>
-            <div class="timeline-item">
+
+            <!-- 2. LinkedIn Personal Brand (coaching) -->
+            <div class="timeline-item persona-filterable" data-persona="coaching">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jan 2026 - Present</span>
+                    <h3 class="timeline-role">LinkedIn Personal Brand — Thought Leadership</h3>
+                    <h4 class="timeline-company">Independent | 1,500+ Followers</h4>
+                    <p>Publish original long-form content on workforce strategy, leadership, and organizational design.
+                        Built an engaged audience through research-based insights and practitioner frameworks.</p>
+                </div>
+            </div>
+
+            <!-- 3. WWT RM (corporate) -->
+            <div class="timeline-item persona-filterable" data-persona="corporate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jul 2024 - Mar 2026</span>
+                    <h3 class="timeline-role">Resource Manager (Engineering Delivery)</h3>
+                    <h4 class="timeline-company">World Wide Technology | India & Remote</h4>
+                    <p>Served as Engineering People Leader for 27 engineers across 40+ engagements, managing a
+                        multi-million-dollar workforce cost base. Designed the 'Penpic Framework' and 'Brag Book' to
+                        shift the performance culture to an evidence-based model. Created the India Leadership Weekly
+                        Status Report for real-time governance, and successfully converted 12 bench weeks into presales
+                        support, directly contributing to an 8-figure USD engagement win.</p>
+                </div>
+            </div>
+
+            <!-- 4. Co-Founder Bengaluru Breads & Chops (kitchen) -->
+            <div class="timeline-item persona-filterable" data-persona="kitchen">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <span class="timeline-date">Feb 2024 - Jan 2025</span>
@@ -312,7 +321,7 @@
                     <h4 class="timeline-company">Bengaluru Breads and Chops</h4>
                     <p>Launched and operated an independent cloud kitchen, managing end-to-end social media strategy,
                         brand identity, and community engagement. Built trust and local discovery to achieve 1,500+
-                        orders and a 4.4 Zomato rating. I now consult early entrepreneurs on setting up their first
+                        orders and a 4.2 Zomato rating. I now consult early entrepreneurs on setting up their first
                         cloud kitchen.</p>
                     <div class="timeline-cta">
                         <a href="https://topmate.io/growwithabhi/2048057?utm_source=public_profile&utm_campaign=growwithabhi"
@@ -324,17 +333,63 @@
                     </div>
                 </div>
             </div>
-            <div class="timeline-item">
+
+            <!-- 5. STIR Education (corporate) -->
+            <div class="timeline-item persona-filterable" data-persona="corporate">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">Jan 2026 - Present</span>
-                    <h3 class="timeline-role">LinkedIn Personal Brand — Thought Leadership</h3>
-                    <h4 class="timeline-company">Independent | 1,500+ Followers</h4>
-                    <p>Publish original long-form content on workforce strategy, leadership, and organizational design.
-                        Built an engaged audience through research-based insights and practitioner frameworks.</p>
+                    <span class="timeline-date">Nov 2023 - Mar 2024</span>
+                    <h3 class="timeline-role">Associate Head – People & Culture</h3>
+                    <h4 class="timeline-company">STIR Education | Bengaluru</h4>
+                    <p>Supported People & Culture leadership during organizational transition — focusing on leadership
+                        enablement, operating clarity, and people systems that worked without heavy process overhead.
+                    </p>
                 </div>
             </div>
-            <div class="timeline-item">
+
+            <!-- 6. WFM Consultant (corporate) -->
+            <div class="timeline-item persona-filterable" data-persona="corporate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Aug 2023 - Jun 2025</span>
+                    <h3 class="timeline-role">Workforce Management Consultant</h3>
+                    <h4 class="timeline-company">Independent Consultant | Bengaluru</h4>
+                    <p>Advised startups and growing teams on resource planning, workforce structure, and operational
+                        efficiency — translating delivery bottlenecks into simple, actionable systems.</p>
+                </div>
+            </div>
+
+            <!-- 7. Teqfocus (corporate) -->
+            <div class="timeline-item persona-filterable" data-persona="corporate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Aug 2022 - Jul 2023</span>
+                    <h3 class="timeline-role">Operations Manager (Resource Management)</h3>
+                    <h4 class="timeline-company">Teqfocus | Remote</h4>
+                    <p>Built the entire Workforce Operations function from Zero to One for a distributed organization
+                        across Canada and India. Designed an interactive Employee Evaluation Dashboard using Tableau,
+                        implemented a Staffing Partner Management Programme to reduce recruitment costs by 15%, and led
+                        HR process design including a referral policy that increased role fulfillment speed by 25%.</p>
+                </div>
+            </div>
+
+            <!-- 8. IBM WFM Staffing Manager (corporate) -->
+            <div class="timeline-item persona-filterable" data-persona="corporate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jul 2017 - Jul 2022</span>
+                    <h3 class="timeline-role">Workforce Staffing Manager</h3>
+                    <h4 class="timeline-company">IBM | Bengaluru & Remote</h4>
+                    <p>Progressed through multiple WFM roles over 5 years. Managed a 600+ workforce lifecycle across UK,
+                        Germany, and Switzerland, maintaining utilization above 85%. Led contractor fulfillment for 70+
+                        accounts (onboarding 650+ contractors) and managed the deployment of 5,500+ campus hires with a
+                        bench hit rate below 3%. Recognized with multiple awards including the Service Excellence Award
+                        2021 and BluePoints for client success.</p>
+                </div>
+            </div>
+
+            <!-- 9. Thought Bites Media (coaching) -->
+            <div class="timeline-item persona-filterable" data-persona="coaching">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <span class="timeline-date">Aug 2020 - Present</span>
@@ -344,7 +399,9 @@
                         end-to-end content calendar, creative direction, and audience growth strategies.</p>
                 </div>
             </div>
-            <div class="timeline-item">
+
+            <!-- 10. Academic Workshops (coaching / kitchen) -->
+            <div class="timeline-item persona-filterable" data-persona="coaching kitchen">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <span class="timeline-date">Academic Workshops & Training</span>
@@ -359,9 +416,64 @@
                         in shaping their post-graduation plans.</p>
                 </div>
             </div>
+
+            <!-- 11. Sasken Trainee (corporate) -->
+            <div class="timeline-item persona-filterable" data-persona="corporate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Jan 2016 - Feb 2016</span>
+                    <h3 class="timeline-role">Marketing Trainee</h3>
+                    <h4 class="timeline-company">Sasken Communication Technologies | Bengaluru</h4>
+                    <p>B2B sales lead generation for Europe, USA, and UK. Consistently achieved daily targets and gained
+                        expertise in global telematics solutions and semiconductor markets.</p>
+                </div>
+            </div>
+
+            <!-- 12. Christ Univ Food Tech Research (kitchen) -->
+            <div class="timeline-item persona-filterable" data-persona="kitchen">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Aug 2015 - Nov 2015</span>
+                    <h3 class="timeline-role">Food Tech Industry Research — The Venturator Live Project</h3>
+                    <h4 class="timeline-company">Christ University | Bengaluru</h4>
+                    <p>Selected through a competitive process to research the Indian food tech ecosystem for The
+                        Venturator — an entrepreneurship enablement platform. Produced a structured industry report
+                        covering market overview, player landscape, investment behaviour, distribution models, and a
+                        forward-looking analysis of the sector.</p>
+                    <p class="mt-4" style="color: var(--text-secondary); font-size: 0.95rem;">Mapped early-stage players
+                        including Swiggy (pre-scale), Zomato's entry into delivery, hyperlocal logistics ventures, and
+                        emerging models like train delivery. Work included SWOT analysis, investor profiling, and a
+                        database of food tech organisations across India.</p>
+                </div>
+            </div>
+
+            <!-- 13. ACT (corporate) -->
+            <div class="timeline-item persona-filterable" data-persona="corporate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Apr 2014 - Mar 2015</span>
+                    <h3 class="timeline-role">Talent Acquisition Executive</h3>
+                    <h4 class="timeline-company">Atria Convergence Technologies Pvt Ltd | Bengaluru</h4>
+                    <p>Recruited top-tier candidates to meet telecom industry goals. Negotiated compensation,
+                        established recruitment partner relationships, and provided data-driven staffing metrics.</p>
+                </div>
+            </div>
+
+            <!-- 14. Samvith HR Trainee (corporate) -->
+            <div class="timeline-item persona-filterable" data-persona="corporate">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Feb 2014 - Apr 2014</span>
+                    <h3 class="timeline-role">HR Trainee</h3>
+                    <h4 class="timeline-company">Samvith Technologies | Bengaluru</h4>
+                    <p>Provided end-to-end talent acquisition support. Headhunted 100+ niche skills, maintained
+                        placement reporting, and negotiated offers for seamless candidate closure.</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Unified Offerings Section -->
     <section id="offerings" class="section">
         <div class="container section-header fade-in">
             <h2 class="section-title">Coaching & <span class="highlight">Strategy Offerings</span></h2>
@@ -372,10 +484,11 @@
         </div>
 
         <div class="container fade-in-up">
-            <h3 class="offerings-category">1:1 Career & Performance Coaching</h3>
+            <h3 class="offerings-category persona-filterable" data-persona="coaching">1:1 Career & Performance Coaching</h3>
             <div class="offerings-grid">
+                <!-- Free Discovery Call (All personas) -->
                 <a href="https://topmate.io/growwithabhi/1811302?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card" style="border-color: var(--accent-primary);">
+                    target="_blank" class="offering-card persona-filterable" data-persona="corporate coaching kitchen" style="border-color: var(--accent-primary);">
                     <div class="offering-badge" style="background: var(--accent-primary); color: white;">DISCOVERY</div>
                     <div class="offering-content">
                         <h3>FREE — Is This Right for You?</h3>
@@ -395,8 +508,9 @@
                     </div>
                 </a>
 
+                <!-- Appraisal & Self-Review Coaching (Coaching) -->
                 <a href="https://topmate.io/growwithabhi/1811298?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="coaching">
                     <div class="offering-badge">SESSION 1</div>
                     <div class="offering-content">
                         <h3>Appraisal & Self-Review Coaching</h3>
@@ -417,8 +531,9 @@
                     </div>
                 </a>
 
+                <!-- Career Roadmap (Coaching) -->
                 <a href="https://topmate.io/growwithabhi/1811300?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="coaching">
                     <div class="offering-badge">SESSION 2</div>
                     <div class="offering-content">
                         <h3>Career Roadmap & Competency Planning</h3>
@@ -439,8 +554,9 @@
                     </div>
                 </a>
 
+                <!-- Rapid Clarity (Coaching) -->
                 <a href="https://topmate.io/growwithabhi/1811301?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="coaching">
                     <div class="offering-badge">SESSION 3</div>
                     <div class="offering-content">
                         <h3>Rapid Clarity Session</h3>
@@ -460,8 +576,9 @@
                     </div>
                 </a>
 
+                <!-- Performance Conversation (Coaching) -->
                 <a href="https://topmate.io/growwithabhi/1811299?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="coaching">
                     <div class="offering-badge">SESSION 4</div>
                     <div class="offering-content">
                         <h3>Performance Conversation Coaching</h3>
@@ -483,10 +600,11 @@
                 </a>
             </div>
 
-            <h3 class="offerings-category mt-5">For Managers & Leaders</h3>
+            <h3 class="offerings-category mt-5 persona-filterable" data-persona="corporate coaching">For Managers & Leaders</h3>
             <div class="offerings-grid">
+                <!-- 9-Box Prep (Corporate & Coaching) -->
                 <a href="https://topmate.io/growwithabhi/2021507?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="corporate coaching">
                     <div class="offering-badge">SESSION 5</div>
                     <div class="offering-content">
                         <h3>Talent Review & 9-Box Calibration Prep</h3>
@@ -507,8 +625,9 @@
                     </div>
                 </a>
 
+                <!-- Performance System Design (Corporate) -->
                 <a href="https://topmate.io/growwithabhi/2021516?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="corporate">
                     <div class="offering-badge">SESSION 6</div>
                     <div class="offering-content">
                         <h3>Performance System Design</h3>
@@ -530,10 +649,11 @@
                 </a>
             </div>
 
-            <h3 class="offerings-category mt-5">Async Guidance & Direct Access</h3>
+            <h3 class="offerings-category mt-5 persona-filterable" data-persona="coaching">Async Guidance & Direct Access</h3>
             <div class="offerings-grid">
+                <!-- Written Coaching (Coaching) -->
                 <a href="https://topmate.io/growwithabhi/2021518?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="coaching">
                     <div class="offering-badge">SESSION 7</div>
                     <div class="offering-content">
                         <h3>Written Coaching — Deep Dive (Async)</h3>
@@ -549,13 +669,14 @@
                     </div>
                     <div class="offering-hover">
                         <p>Send me your specific scenario. I'll provide a detailed, actionable written response you can
-                            reference forever.</p>
+                        reference forever.</p>
                         <span class="btn-primary-small">View Details</span>
                     </div>
                 </a>
 
+                <!-- Priority DM Pro (Coaching) -->
                 <a href="https://topmate.io/growwithabhi/1811426/pay?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="coaching">
                     <div class="offering-badge">PRIORITY DM</div>
                     <div class="offering-content">
                         <h3>Priority DM – Pro</h3>
@@ -576,8 +697,9 @@
                     </div>
                 </a>
 
+                <!-- Priority DM Lite (Coaching) -->
                 <a href="https://topmate.io/growwithabhi/1811399/pay?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="coaching">
                     <div class="offering-badge">PRIORITY DM</div>
                     <div class="offering-content">
                         <h3>Priority DM – Lite</h3>
@@ -599,10 +721,11 @@
                 </a>
             </div>
 
-            <h3 class="offerings-category mt-5">Entrepreneurial Strategy</h3>
+            <h3 class="offerings-category mt-5 persona-filterable" data-persona="kitchen">Entrepreneurial Strategy</h3>
             <div class="offerings-grid">
+                <!-- Playbook (Kitchen) -->
                 <a href="https://topmate.io/growwithabhi/2047380?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="kitchen">
                     <div class="offering-badge">DIGITAL PRODUCT</div>
                     <div class="offering-content">
                         <h3>No BS Cloud Kitchen Setup</h3>
@@ -617,14 +740,15 @@
                         </div>
                     </div>
                     <div class="offering-hover">
-                        <p>Get the exact templates, checklists, and 90-day plan I used to hit 1,500+ orders and a 4.4
+                        <p>Get the exact templates, checklists, and 90-day plan I used to hit 1,500+ orders and a 4.2
                             Zomato rating.</p>
                         <span class="btn-primary-small">View Details</span>
                     </div>
                 </a>
 
+                <!-- 1:1 Strategy (Kitchen) -->
                 <a href="https://topmate.io/growwithabhi/2048057?utm_source=public_profile&utm_campaign=growwithabhi"
-                    target="_blank" class="offering-card">
+                    target="_blank" class="offering-card persona-filterable" data-persona="kitchen">
                     <div class="offering-badge">STRATEGY CALL</div>
                     <div class="offering-content">
                         <h3>Cloud Kitchen Implementation — 1:1 Strategy Call</h3>
@@ -648,25 +772,29 @@
         </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education" class="section bg-darker">
         <div class="container section-header fade-in">
             <h2 class="section-title">Education & <span class="highlight">Certifications</span></h2>
             <div class="title-underline"></div>
         </div>
         <div class="container edu-grid fade-in-up">
-            <div class="edu-card">
+            <!-- BITSOM (Corporate & Coaching) -->
+            <div class="edu-card persona-filterable" data-persona="corporate coaching">
                 <div class="edu-icon"><i class="fas fa-robot"></i></div>
                 <h3 class="edu-degree">Product Management - GenAI & Agentic AI</h3>
                 <h4 class="edu-school">BITSOM via Masai</h4>
                 <p class="edu-year">2026 - Present</p>
             </div>
-            <div class="edu-card">
+            <!-- THWS Germany (Corporate & Kitchen) -->
+            <div class="edu-card persona-filterable" data-persona="corporate kitchen">
                 <div class="edu-icon"><i class="fas fa-globe"></i></div>
                 <h3 class="edu-degree">MBA in International Business and PGDM in Marketing (Dual Degree)</h3>
                 <h4 class="edu-school">THWS Germany & Christ University</h4>
                 <p class="edu-year">2015 - 2017</p>
             </div>
-            <div class="edu-card">
+            <!-- BMSIT (Corporate) -->
+            <div class="edu-card persona-filterable" data-persona="corporate">
                 <div class="edu-icon"><i class="fas fa-microchip"></i></div>
                 <h3 class="edu-degree">B.E. - Electrical & Electronics Engineering</h3>
                 <h4 class="edu-school">BMS Institute of Technology & Management</h4>
@@ -677,26 +805,17 @@
         <div class="container certs-container fade-in-up">
             <h3>Key Awards & Certifications</h3>
             <ul class="cert-list">
-                <li><i class="fas fa-award highlight"></i> Distinguished – Performance Management Ready 2025 (Aon
-                    Learning Center, SHRM/ATD/HRCI recognized)</li>
-                <li><i class="fas fa-award highlight"></i> Distinguished – Talent Management Professional 2026 (Aon
-                    Learning Center, SHRM/ATD/HRCI recognized)</li>
-                <li><i class="fas fa-trophy highlight"></i> Service Excellence Award (SEA) 2021 — IBM Consulting
-                    (workforce governance)</li>
-                <li><i class="fas fa-certificate highlight"></i> Project Management Simplified — LinkedIn Learning</li>
-                <li><i class="fas fa-certificate highlight"></i> Claude Cowork for HR — Springworks (Apr 2026)</li>
-                <li><i class="fas fa-certificate highlight"></i> Financial Modeling and Valuation with AI — Internshala
-                    (Sep 2020)</li>
-                <li><i class="fas fa-certificate highlight"></i> Effective Communication in the Workplace — Udemy (Feb
-                    2026)</li>
-                <li><i class="fas fa-certificate highlight"></i> The Shape of Work - HR Playbook 6.0 — SpringVerify (Feb
-                    2026)</li>
-                <li><i class="fas fa-certificate highlight"></i> India Consulting Capstone — World Wide Technology (Feb
-                    2025)</li>
-                <li><i class="fas fa-award highlight"></i> Volunteer Mentor — WWT IGNIS 2025 Innovation Challenge (Jan
-                    2026)</li>
-                <li><i class="fas fa-award highlight"></i> Multiple IBM BluePoints & Practice Awards for Client Success
-                    (2019-2020)</li>
+                <li class="persona-filterable" data-persona="corporate"><i class="fas fa-award highlight"></i> Distinguished – Performance Management Ready 2025 (Aon Learning Center, SHRM/ATD/HRCI recognized)</li>
+                <li class="persona-filterable" data-persona="corporate"><i class="fas fa-award highlight"></i> Distinguished – Talent Management Professional 2026 (Aon Learning Center, SHRM/ATD/HRCI recognized)</li>
+                <li class="persona-filterable" data-persona="corporate"><i class="fas fa-trophy highlight"></i> Service Excellence Award (SEA) 2021 — IBM Consulting (workforce governance)</li>
+                <li class="persona-filterable" data-persona="corporate"><i class="fas fa-certificate highlight"></i> Project Management Simplified — LinkedIn Learning</li>
+                <li class="persona-filterable" data-persona="corporate coaching"><i class="fas fa-certificate highlight"></i> Claude Cowork for HR — Springworks (Apr 2026)</li>
+                <li class="persona-filterable" data-persona="corporate kitchen"><i class="fas fa-certificate highlight"></i> Financial Modeling and Valuation with AI — Internshala (Sep 2020)</li>
+                <li class="persona-filterable" data-persona="corporate coaching"><i class="fas fa-certificate highlight"></i> Effective Communication in the Workplace — Udemy (Feb 2026)</li>
+                <li class="persona-filterable" data-persona="corporate"><i class="fas fa-certificate highlight"></i> The Shape of Work - HR Playbook 6.0 — SpringVerify (Feb 2026)</li>
+                <li class="persona-filterable" data-persona="corporate"><i class="fas fa-certificate highlight"></i> India Consulting Capstone — World Wide Technology (Feb 2025)</li>
+                <li class="persona-filterable" data-persona="corporate coaching"><i class="fas fa-award highlight"></i> Volunteer Mentor — WWT IGNIS 2025 Innovation Challenge (Jan 2026)</li>
+                <li class="persona-filterable" data-persona="corporate"><i class="fas fa-award highlight"></i> Multiple IBM BluePoints & Practice Awards for Client Success (2019-2020)</li>
             </ul>
         </div>
     </section>
@@ -740,7 +859,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1.2"></script>
 </body>
 
 </html>
